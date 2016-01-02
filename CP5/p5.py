@@ -46,6 +46,7 @@ class RunningFish(object):
     def running_speed(self):
         return self.fish.swim_speed()
 
-
+    def __getattr__(self, item):
+        return getattr(self.fish,item)
 
 run_com(Cat('a',3),RunningFish(Fish('b',5)))
